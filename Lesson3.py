@@ -32,14 +32,18 @@ homEwork:
 
 normalized_paragraph = normalized_paragraph.capitalize()
 
-# Task 3: Fix misspelling "iZ" with correct "is" only when it is a mistake
+# Fix misspelling "iZ" with correct "is" only when it is a mistake
 normalized_paragraph = normalized_paragraph.replace(' iz ', ' is ')
 
-# Task 4: Calculate the number of whitespace characters in the text
-whitespace_count = sum(1 for char in normalized_paragraph if char.isspace())
+# Calculate the number of whitespace characters in the text
+#
+whitespace_count = 0
+for char in normalized_paragraph:
+    if char.isspace():
+        whitespace_count += 1
 
-# Display the results
+
 print("Normalized Paragraph:")
 print(normalized_paragraph)
 
-print("\nNumber of Whitespace Characters:", whitespace_count)
+print("\nNumber of Whitespaces:", whitespace_count)
